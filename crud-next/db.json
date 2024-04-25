@@ -1,0 +1,9 @@
+{
+  "blog": [
+    {
+      "id": "1",
+      "title": "a title",
+      "content": "this is content"
+    }
+  ]
+}
