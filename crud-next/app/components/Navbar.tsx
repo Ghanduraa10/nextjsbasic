@@ -1,4 +1,10 @@
-export default function Navbar() {
+import AddModalForm from "./AddModalForm";
+
+type AddModalFormProps = {
+  setBlog: React.Dispatch<React.SetStateAction<any[]>>;
+};
+
+export default function Navbar({ setBlog }: AddModalFormProps) {
   return (
     <>
       <div className="navbar bg-base-100">
@@ -22,29 +28,14 @@ export default function Navbar() {
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">Next.js CRUD</a>
         </div>
         <div className="navbar-end">
-          <a className="btn">Add Blog</a>
+          <a className="btn">
+            <AddModalForm setBlog={setBlog} />
+          </a>
         </div>
       </div>
     </>
